@@ -9,7 +9,7 @@ Ce dépôt concerne les rendus de mailto:zakaria.belkheiri@etu.univ-tlse2.fr[Zak
 
 == TP1
 
-.Contenu du fichier :  icon:file[] `is_it_friday_yet.feature`
+.Contenu du fichier :  `is_it_friday_yet.feature`
 [source, gherkin]
 ----
 Feature: Is it friday yet?
@@ -34,3 +34,41 @@ Feature: Is it friday yet?
 image::screenshots/test_tp1.png[width=100%]
 
 == TP2
+
+.Contenu du fichier :  `Order.java`
+[source, java]
+----
+public class Order {
+    private String owner;
+    private String target;
+    private List<String> cocktails;
+    private String message = "";
+
+    public void declareOwner(String owner) {
+        this.owner = owner;
+    }
+
+    public void declareTarget(String target) {
+        this.target = target;
+    }
+
+    public List<String> getCocktails() {
+        if (cocktails == null)
+            cocktails = new ArrayList<>();
+
+        return cocktails;
+    }
+
+    public void addMessage(String message) {
+        this.message = message;
+    }
+
+    public String getTicket() {
+        return "From " + owner + " to " + target + ": " + message;
+    }
+}
+
+----
+
+.Capture d'écran de l'exécution des tests
+image::screenshots/test_tp.png[width=100%]
